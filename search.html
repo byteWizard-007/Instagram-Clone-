@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search | Instagram</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#fafafa;
+display:flex;
+min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:250px;
+height:100vh;
+position:fixed;
+left:0;
+top:0;
+background:#fff;
+border-right:1px solid #ddd;
+padding:30px 20px;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+margin-bottom:40px;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar li{
+padding:15px;
+border-radius:12px;
+cursor:pointer;
+display:flex;
+gap:15px;
+align-items:center;
+margin-bottom:10px;
+}
+
+.sidebar li:hover{
+background:#f5f5f5;
+}
+
+/* MAIN */
+
+.search-page{
+margin-left:270px;
+width:100%;
+padding:30px;
+}
+
+.search-box{
+position:relative;
+margin-bottom:30px;
+}
+
+.search-box input{
+width:100%;
+padding:18px 55px 18px 20px;
+border:none;
+background:#efefef;
+border-radius:15px;
+font-size:16px;
+outline:none;
+}
+
+.search-box i{
+position:absolute;
+right:20px;
+top:20px;
+color:gray;
+}
+
+/* USERS */
+
+.user-list{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.user-card{
+background:white;
+padding:15px;
+border-radius:15px;
+display:flex;
+align-items:center;
+gap:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.user-card:hover{
+transform:translateY(-3px);
+}
+
+.user-card img{
+width:60px;
+height:60px;
+border-radius:50%;
+}
+
+.user-info{
+flex:1;
+}
+
+.user-info p{
+color:gray;
+font-size:14px;
+}
+
+.follow-btn{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#0095f6;
+color:white;
+cursor:pointer;
+font-weight:600;
+}
+
+/* TRENDING */
+
+.trending{
+margin-top:40px;
+}
+
+.trending h2{
+margin-bottom:20px;
+}
+
+.tags{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.tag{
+padding:12px 18px;
+background:white;
+border-radius:30px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.sidebar{
+display:none;
+}
+
+.search-page{
+margin-left:0;
+padding-bottom:90px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+Instagram
+</div>
+
+<ul>
+
+<li onclick="location.href='index.html'">
+<i class="fa-solid fa-house"></i>
+Home
+</li>
+
+<li onclick="location.href='search.html'">
+<i class="fa-solid fa-magnifying-glass"></i>
+Search
+</li>
+
+<li onclick="location.href='explore.html'">
+<i class="fa-solid fa-compass"></i>
+Explore
+</li>
+
+<li onclick="location.href='reels.html'">
+<i class="fa-solid fa-clapperboard"></i>
+Reels
+</li>
+
+<li onclick="location.href='messages.html'">
+<i class="fa-regular fa-paper-plane"></i>
+Messages
+</li>
+
+<li onclick="location.href='profile.html'">
+<i class="fa-regular fa-user"></i>
+Profile
+</li>
+
+</ul>
+
+</div>
+
+<div class="search-page">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search users...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="user-list" id="userList">
+
+<div class="user-card">
+
+<img src="https://i.pravatar.cc/150?img=1">
+
+<div class="user-info">
+
+<h4>alex_carter</h4>
+
+<p>Photographer 📸</p>
+
+</div>
+
+<button class="follow-btn">
+Follow
+</button>
+
+</div>
+
+<div class="user-card">
+
+<img src="https://i.pravatar.cc/150?img=2">
+
+<div class="user-info">
+
+<h4>emma_rose</h4>
+
+<p>Travel Blogger ✈️</p>
+
+</div>
+
+<button class="follow-btn">
+Follow
+</button>
+
+</div>
+
+<div class="user-card">
+
+<img src="https://i.pravatar.cc/150?img=3">
+
+<div class="user-info">
+
+<h4>daniel_king</h4>
+
+<p>Frontend Developer 💻</p>
+
+</div>
+
+<button class="follow-btn">
+Follow
+</button>
+
+</div>
+
+</div>
+
+<div class="trending">
+
+<h2>Trending Searches 🔥</h2>
+
+<div class="tags">
+
+<div class="tag">#cricket</div>
+<div class="tag">#coding</div>
+<div class="tag">#travel</div>
+<div class="tag">#music</div>
+<div class="tag">#india</div>
+<div class="tag">#frontend</div>
+<div class="tag">#instagram</div>
+<div class="tag">#reels</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const input =
+document.getElementById(
+"searchInput"
+);
+
+input.addEventListener(
+"keyup",
+()=>{
+
+let value =
+input.value.toLowerCase();
+
+document
+.querySelectorAll(
+".user-card"
+)
+
+.forEach(card=>{
+
+let text =
+card.innerText.toLowerCase();
+
+card.style.display =
+text.includes(value)
+? "flex"
+: "none";
+
+});
+
+});
+
+document
+.querySelectorAll(
+".follow-btn"
+)
+
+.forEach(btn=>{
+
+btn.onclick=()=>{
+
+btn.innerText =
+"Following";
+
+btn.style.background =
+"#ddd";
+
+btn.style.color =
+"#000";
+
+};
+
+});
+
+</script>
+
+</body>
+</html>

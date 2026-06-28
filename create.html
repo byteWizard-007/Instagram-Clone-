@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Post | Instagram</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(
+135deg,
+#833AB4,
+#FD1D1D,
+#FCAF45
+);
+padding:20px;
+}
+
+.create-card{
+width:100%;
+max-width:850px;
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+
+.create-header{
+padding:20px;
+text-align:center;
+font-size:24px;
+font-weight:600;
+border-bottom:1px solid #eee;
+}
+
+.create-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+.upload-side{
+padding:40px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+gap:20px;
+}
+
+.upload-side i{
+font-size:80px;
+color:#833AB4;
+}
+
+.upload-side button{
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:#0095f6;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+.details-side{
+padding:30px;
+background:#fafafa;
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.profile img{
+width:45px;
+height:45px;
+border-radius:50%;
+}
+
+textarea{
+width:100%;
+height:180px;
+resize:none;
+padding:15px;
+border:1px solid #ddd;
+border-radius:15px;
+outline:none;
+}
+
+.options{
+margin-top:20px;
+}
+
+.option{
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+
+.post-btn{
+width:100%;
+margin-top:25px;
+padding:15px;
+border:none;
+border-radius:15px;
+background:linear-gradient(
+135deg,
+#833AB4,
+#FD1D1D
+);
+color:white;
+font-size:18px;
+cursor:pointer;
+font-weight:600;
+}
+
+.preview{
+width:250px;
+height:250px;
+border-radius:20px;
+object-fit:cover;
+display:none;
+}
+
+@media(max-width:768px){
+
+.create-content{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="create-card">
+
+<div class="create-header">
+Create New Post ✨
+</div>
+
+<div class="create-content">
+
+<div class="upload-side">
+
+<img
+id="preview"
+class="preview">
+
+<i
+id="uploadIcon"
+class="fa-regular fa-image">
+</i>
+
+<input
+type="file"
+id="fileInput"
+hidden>
+
+<button onclick="fileInput.click()">
+Select From Computer
+</button>
+
+</div>
+
+<div class="details-side">
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/150?img=12">
+
+<h4>your_username</h4>
+
+</div>
+
+<textarea
+placeholder="Write a caption...">
+</textarea>
+
+<div class="options">
+
+<div class="option">
+<span>📍 Add Location</span>
+<i class="fa-solid fa-chevron-right"></i>
+</div>
+
+<div class="option">
+<span>😊 Tag People</span>
+<i class="fa-solid fa-chevron-right"></i>
+</div>
+
+<div class="option">
+<span>🎵 Add Music</span>
+<i class="fa-solid fa-chevron-right"></i>
+</div>
+
+<div class="option">
+<span>⚙ Advanced Settings</span>
+<i class="fa-solid fa-chevron-right"></i>
+</div>
+
+</div>
+
+<button class="post-btn">
+Share Post 🚀
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const fileInput =
+document.getElementById(
+"fileInput"
+);
+
+const preview =
+document.getElementById(
+"preview"
+);
+
+const icon =
+document.getElementById(
+"uploadIcon"
+);
+
+fileInput.addEventListener(
+"change",
+e=>{
+
+const file =
+e.target.files[0];
+
+if(file){
+
+preview.src =
+URL.createObjectURL(file);
+
+preview.style.display=
+"block";
+
+icon.style.display=
+"none";
+
+}
+
+});
+
+document
+.querySelector(".post-btn")
+.onclick=()=>{
+
+alert(
+"Post Shared Successfully 🚀"
+);
+
+};
+
+</script>
+
+</body>
+</html>
